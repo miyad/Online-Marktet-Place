@@ -1,0 +1,144 @@
+PS C:\ALL\Project\OnlineMarket\Best_Laravel57_Ecommerce1> php artisan route:list
++--------+---------------+----------------------------------------------+-----------------------+------------------------------------------------------------------------+---------------------------+
+| Domain | Method        | URI                                          | Name                  | Action                                                                 | Middleware                |
++--------+---------------+----------------------------------------------+-----------------------+------------------------------------------------------------------------+---------------------------+
+|        | GET|HEAD      | /                                            |                       | App\Http\Controllers\IndexController@index                             | web                       |
+|        | POST          | addToCart                                    | addToCart             | App\Http\Controllers\CartController@addToCart                          | web                       |
+|        | GET|HEAD      | admin                                        | admin_home            | App\Http\Controllers\AdminController@index                             | web,auth,admin            |
+|        | GET|HEAD      | admin/category                               | category.index        | App\Http\Controllers\CategoryController@index                          | web,auth,admin            |
+|        | POST          | admin/category                               | category.store        | App\Http\Controllers\CategoryController@store                          | web,auth,admin            |
+|        | GET|HEAD      | admin/category/create                        |                       | App\Http\Controllers\CategoryController@create                         | web,auth,admin            |
+|        | GET|HEAD      | admin/category/edit/{id}                     |                       | App\Http\Controllers\CategoryController@edit                           | web,auth,admin            |
+|        | GET|HEAD      | admin/category/index                         |                       | App\Http\Controllers\CategoryController@index                          | web,auth,admin            |
+|        | POST          | admin/category/store                         |                       | App\Http\Controllers\CategoryController@store                          | web,auth,admin            |
+|        | POST          | admin/category/update                        |                       | App\Http\Controllers\CategoryController@update                         | web,auth,admin            |
+|        | GET|HEAD      | admin/category/{category}                    | category.show         | App\Http\Controllers\CategoryController@show                           | web,auth,admin            |
+|        | PUT|PATCH     | admin/category/{category}                    | category.update       | App\Http\Controllers\CategoryController@update                         | web,auth,admin            |
+|        | DELETE        | admin/category/{category}                    | category.destroy      | App\Http\Controllers\CategoryController@destroy                        | web,auth,admin            |
+|        | GET|HEAD      | admin/category/{category}/edit               | category.edit         | App\Http\Controllers\CategoryController@edit                           | web,auth,admin            |
+|        | GET|HEAD      | admin/check-pwd                              |                       | App\Http\Controllers\AdminController@chkPassword                       | web,auth,admin            |
+|        | GET|HEAD      | admin/check_category_name                    |                       | App\Http\Controllers\CategoryController@checkCateName                  | web,auth,admin            |
+|        | GET|HEAD      | admin/coupon                                 | coupon.index          | App\Http\Controllers\CouponController@index                            | web,auth,admin            |
+|        | POST          | admin/coupon                                 | coupon.store          | App\Http\Controllers\CouponController@store                            | web,auth,admin            |
+|        | GET|HEAD      | admin/coupon/create                          | coupon.create         | App\Http\Controllers\CouponController@create                           | web,auth,admin            |
+|        | GET|HEAD      | admin/coupon/{coupon}                        | coupon.show           | App\Http\Controllers\CouponController@show                             | web,auth,admin            |
+|        | DELETE        | admin/coupon/{coupon}                        | coupon.destroy        | App\Http\Controllers\CouponController@destroy                          | web,auth,admin            |
+|        | PUT|PATCH     | admin/coupon/{coupon}                        | coupon.update         | App\Http\Controllers\CouponController@update                           | web,auth,admin            |
+|        | GET|HEAD      | admin/coupon/{coupon}/edit                   | coupon.edit           | App\Http\Controllers\CouponController@edit                             | web,auth,admin            |
+|        | GET|HEAD      | admin/delete-category/{id}                   |                       | App\Http\Controllers\CategoryController@destroy                        | web,auth,admin            |
+|        | GET|HEAD      | admin/delete-coupon/{id}                     |                       | App\Http\Controllers\CouponController@destroy                          | web,auth,admin            |
+|        | GET|HEAD      | admin/delete-order/{id}                      |                       | App\Http\Controllers\OrdersController@destroy                          | web,auth,admin            |
+|        | GET|HEAD      | admin/delete-shop/{id}                       |                       | App\Http\Controllers\ShopController@destroy                            | web,auth,admin            |
+|        | POST          | admin/orders                                 | orders.store          | App\Http\Controllers\OrdersController@store                            | web,auth,admin            |
+|        | GET|HEAD      | admin/orders                                 | orders.index          | App\Http\Controllers\OrdersController@index                            | web,auth,admin            |
+|        | GET|HEAD      | admin/orders/assign/{id}                     |                       | App\Http\Controllers\OrdersController@assign                           | web,auth,admin            |
+|        | GET|HEAD      | admin/orders/create                          | orders.create         | App\Http\Controllers\OrdersController@create                           | web,auth,admin            |
+|        | GET|HEAD      | admin/orders/show/{id}                       |                       | App\Http\Controllers\OrdersController@show                             | web,auth,admin            |
+|        | PUT|PATCH     | admin/orders/{order}                         | orders.update         | App\Http\Controllers\OrdersController@update                           | web,auth,admin            |
+|        | GET|HEAD      | admin/orders/{order}                         | orders.show           | App\Http\Controllers\OrdersController@show                             | web,auth,admin            |
+|        | DELETE        | admin/orders/{order}                         | orders.destroy        | App\Http\Controllers\OrdersController@destroy                          | web,auth,admin            |
+|        | GET|HEAD      | admin/orders/{order}/edit                    | orders.edit           | App\Http\Controllers\OrdersController@edit                             | web,auth,admin            |
+|        | GET|HEAD      | admin/settings                               |                       | App\Http\Controllers\AdminController@settings                          | web,auth,admin            |
+|        | GET|HEAD      | admin/shop                                   | shop.index            | App\Http\Controllers\ShopController@index                              | web,auth,admin            |
+|        | POST          | admin/shop                                   | shop.store            | App\Http\Controllers\ShopController@store                              | web,auth,admin            |
+|        | GET|HEAD      | admin/shop/create                            | shop.create           | App\Http\Controllers\ShopController@create                             | web,auth,admin            |
+|        | PUT|PATCH     | admin/shop/{shop}                            | shop.update           | App\Http\Controllers\ShopController@update                             | web,auth,admin            |
+|        | GET|HEAD      | admin/shop/{shop}                            | shop.show             | App\Http\Controllers\ShopController@show                               | web,auth,admin            |
+|        | DELETE        | admin/shop/{shop}                            | shop.destroy          | App\Http\Controllers\ShopController@destroy                            | web,auth,admin            |
+|        | GET|HEAD      | admin/shop/{shop}/edit                       | shop.edit             | App\Http\Controllers\ShopController@edit                               | web,auth,admin            |
+|        | POST          | admin/update-pwd                             |                       | App\Http\Controllers\AdminController@updatAdminPwd                     | web,auth,admin            |
+|        | GET|HEAD      | api/user                                     |                       | Closure                                                                | api,auth:api              |
+|        | GET|HEAD      | application                                  | application.index     | App\Http\Controllers\ApplicationController@index                       | web                       |
+|        | POST          | application                                  | application.store     | App\Http\Controllers\ApplicationController@store                       | web                       |
+|        | GET|HEAD      | application/create                           | application.create    | App\Http\Controllers\ApplicationController@create                      | web                       |
+|        | GET|HEAD      | application/givetime/{id}                    |                       | App\Http\Controllers\ApplicationController@givetime                    | web                       |
+|        | DELETE        | application/{application}                    | application.destroy   | App\Http\Controllers\ApplicationController@destroy                     | web                       |
+|        | PUT|PATCH     | application/{application}                    | application.update    | App\Http\Controllers\ApplicationController@update                      | web                       |
+|        | GET|HEAD      | application/{application}                    | application.show      | App\Http\Controllers\ApplicationController@show                        | web                       |
+|        | GET|HEAD      | application/{application}/edit               | application.edit      | App\Http\Controllers\ApplicationController@edit                        | web                       |
+|        | POST          | apply-coupon                                 |                       | App\Http\Controllers\CouponController@applycoupon                      | web                       |
+|        | GET|HEAD      | apply_shop/{id}                              |                       | App\Http\Controllers\ApplicationController@apply_shop                  | web                       |
+|        | GET|HEAD      | arrilot/load-widget                          |                       | Arrilot\Widgets\Controllers\WidgetController@showWidget                | web                       |
+|        | GET|POST|HEAD | broadcasting/auth                            |                       | Illuminate\Broadcasting\BroadcastController@authenticate               | web                       |
+|        | GET|HEAD      | cart/deleteItem/{id}                         |                       | App\Http\Controllers\CartController@deleteItem                         | web                       |
+|        | GET|HEAD      | cart/update-quantity/{id}/{quantity}         |                       | App\Http\Controllers\CartController@updateQuantity                     | web                       |
+|        | GET|HEAD      | cat/{id}                                     | cats                  | App\Http\Controllers\IndexController@listByCat                         | web                       |
+|        | GET|HEAD      | check-out                                    |                       | App\Http\Controllers\CheckOutController@index                          | web,FrontLogin_middleware |
+|        | GET|HEAD      | cod/{orid}                                   |                       | App\Http\Controllers\OrdersController@cod                              | web,FrontLogin_middleware |
+|        | GET|HEAD      | contact                                      |                       | App\Http\Controllers\IndexController@contact                           | web                       |
+|        | GET|HEAD      | deleteApplication/{id}                       |                       | App\Http\Controllers\ApplicationController@deleteApplication           | web                       |
+|        | POST          | download                                     |                       | App\Http\Controllers\OrdersController@download                         | web,FrontLogin_middleware |
+|        | GET|HEAD      | get-product-attr                             |                       | App\Http\Controllers\IndexController@getAttrs                          | web                       |
+|        | GET|HEAD      | giveShop/{id}                                |                       | App\Http\Controllers\ApplicationController@giveShop                    | web                       |
+|        | GET|HEAD      | home                                         | home                  | App\Http\Controllers\HomeController@index                              | web,auth                  |
+|        | GET|HEAD      | list-products                                |                       | App\Http\Controllers\IndexController@shop                              | web                       |
+|        | GET|HEAD      | login                                        | login                 | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest                 |
+|        | POST          | login                                        |                       | App\Http\Controllers\Auth\LoginController@login                        | web,guest                 |
+|        | GET|HEAD      | login_page                                   |                       | App\Http\Controllers\UsersController@index                             | web                       |
+|        | POST          | logout                                       | logout                | App\Http\Controllers\Auth\LoginController@logout                       | web                       |
+|        | GET|HEAD      | logout                                       |                       | App\Http\Controllers\UsersController@logout                            | web                       |
+|        | GET|HEAD      | myaccount                                    |                       | App\Http\Controllers\UsersController@account                           | web,FrontLogin_middleware |
+|        | GET|HEAD      | order-review                                 |                       | App\Http\Controllers\OrdersController@index                            | web,FrontLogin_middleware |
+|        | POST          | password/email                               | password.email        | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest                 |
+|        | POST          | password/reset                               | password.update       | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest                 |
+|        | GET|HEAD      | password/reset                               | password.request      | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest                 |
+|        | GET|HEAD      | password/reset/{token}                       | password.reset        | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest                 |
+|        | GET|HEAD      | paypal                                       |                       | App\Http\Controllers\OrdersController@paypal                           | web,FrontLogin_middleware |
+|        | GET|HEAD      | prev_orders                                  |                       | App\Http\Controllers\UsersController@prev_orders                       | web,FrontLogin_middleware |
+|        | POST          | prodreview                                   |                       | App\Http\Controllers\ProductAtrrController@addreview                   | web                       |
+|        | GET|HEAD      | product-detail/{id}                          |                       | App\Http\Controllers\IndexController@detialpro                         | web                       |
+|        | POST          | register_user                                |                       | App\Http\Controllers\UsersController@register                          | web                       |
+|        | POST          | search                                       |                       | App\Http\Controllers\IndexController@search                            | web                       |
+|        | GET|HEAD      | shopowner                                    | Shopowner_home        | App\Http\Controllers\ShopownerController@index                         | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/category                           | category.index        | App\Http\Controllers\CategoryController@index                          | web,auth,Shopowner        |
+|        | POST          | shopowner/category                           | category.store        | App\Http\Controllers\CategoryController@store                          | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/category/create                    |                       | App\Http\Controllers\CategoryController@create                         | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/category/edit/{id}                 |                       | App\Http\Controllers\CategoryController@edit                           | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/category/index                     |                       | App\Http\Controllers\CategoryController@show                           | web,auth,Shopowner        |
+|        | POST          | shopowner/category/store                     |                       | App\Http\Controllers\CategoryController@store                          | web,auth,Shopowner        |
+|        | POST          | shopowner/category/update                    |                       | App\Http\Controllers\CategoryController@supdate                        | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/category/{category}                | category.show         | App\Http\Controllers\CategoryController@show                           | web,auth,Shopowner        |
+|        | PUT|PATCH     | shopowner/category/{category}                | category.update       | App\Http\Controllers\CategoryController@update                         | web,auth,Shopowner        |
+|        | DELETE        | shopowner/category/{category}                | category.destroy      | App\Http\Controllers\CategoryController@destroy                        | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/category/{category}/edit           | category.edit         | App\Http\Controllers\CategoryController@edit                           | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/check-pwd                          |                       | App\Http\Controllers\ShopownerController@chkPassword                   | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/check_category_name                |                       | App\Http\Controllers\CategoryController@checkCateName                  | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/delete-attribute/{id}              |                       | App\Http\Controllers\ProductAtrrController@deleteAttr                  | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/delete-category/{id}               |                       | App\Http\Controllers\CategoryController@destroy                        | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/delete-image/{id}                  |                       | App\Http\Controllers\ProductsController@deleteImage                    | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/delete-imageGallery/{id}           |                       | App\Http\Controllers\ImagesController@destroy                          | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/delete-product/{id}                |                       | App\Http\Controllers\ProductsController@destroy                        | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/image-gallery                      | image-gallery.index   | App\Http\Controllers\ImagesController@index                            | web,auth,Shopowner        |
+|        | POST          | shopowner/image-gallery                      | image-gallery.store   | App\Http\Controllers\ImagesController@store                            | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/image-gallery/create               | image-gallery.create  | App\Http\Controllers\ImagesController@create                           | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/image-gallery/{image_gallery}      | image-gallery.show    | App\Http\Controllers\ImagesController@show                             | web,auth,Shopowner        |
+|        | PUT|PATCH     | shopowner/image-gallery/{image_gallery}      | image-gallery.update  | App\Http\Controllers\ImagesController@update                           | web,auth,Shopowner        |
+|        | DELETE        | shopowner/image-gallery/{image_gallery}      | image-gallery.destroy | App\Http\Controllers\ImagesController@destroy                          | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/image-gallery/{image_gallery}/edit | image-gallery.edit    | App\Http\Controllers\ImagesController@edit                             | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product                            | product.index         | App\Http\Controllers\ProductsController@index                          | web,auth,Shopowner        |
+|        | POST          | shopowner/product                            | product.store         | App\Http\Controllers\ProductsController@store                          | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product/create                     | product.create        | App\Http\Controllers\ProductsController@create                         | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product/show                       |                       | App\Http\Controllers\ProductsController@show                           | web,auth,Shopowner        |
+|        | DELETE        | shopowner/product/{product}                  | product.destroy       | App\Http\Controllers\ProductsController@destroy                        | web,auth,Shopowner        |
+|        | PUT|PATCH     | shopowner/product/{product}                  | product.update        | App\Http\Controllers\ProductsController@update                         | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product/{product}                  | product.show          | App\Http\Controllers\ProductsController@show                           | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product/{product}/edit             | product.edit          | App\Http\Controllers\ProductsController@edit                           | web,auth,Shopowner        |
+|        | POST          | shopowner/product_attr                       | product_attr.store    | App\Http\Controllers\ProductAtrrController@store                       | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product_attr                       | product_attr.index    | App\Http\Controllers\ProductAtrrController@index                       | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product_attr/create                | product_attr.create   | App\Http\Controllers\ProductAtrrController@create                      | web,auth,Shopowner        |
+|        | DELETE        | shopowner/product_attr/{product_attr}        | product_attr.destroy  | App\Http\Controllers\ProductAtrrController@destroy                     | web,auth,Shopowner        |
+|        | PUT|PATCH     | shopowner/product_attr/{product_attr}        | product_attr.update   | App\Http\Controllers\ProductAtrrController@update                      | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product_attr/{product_attr}        | product_attr.show     | App\Http\Controllers\ProductAtrrController@show                        | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/product_attr/{product_attr}/edit   | product_attr.edit     | App\Http\Controllers\ProductAtrrController@edit                        | web,auth,Shopowner        |
+|        | GET|HEAD      | shopowner/settings                           |                       | App\Http\Controllers\ShopownerController@settings                      | web,auth,Shopowner        |
+|        | POST          | shopowner/update-pwd                         |                       | App\Http\Controllers\ShopownerController@updatSOPwd                    | web,auth,Shopowner        |
+|        | GET|HEAD      | showapplications0                            |                       | App\Http\Controllers\ApplicationController@showapplications0           | web                       |
+|        | GET|HEAD      | showapplications1                            |                       | App\Http\Controllers\ApplicationController@showapplications1           | web                       |
+|        | POST          | submit-checkout                              |                       | App\Http\Controllers\CheckOutController@submitcheckout                 | web,FrontLogin_middleware |
+|        | POST          | submit-order                                 |                       | App\Http\Controllers\OrdersController@order                            | web,FrontLogin_middleware |
+|        | PUT           | update-password/{id}                         |                       | App\Http\Controllers\UsersController@updatepassword                    | web,FrontLogin_middleware |
+|        | PUT           | update-profile/{id}                          |                       | App\Http\Controllers\UsersController@updateprofile                     | web,FrontLogin_middleware |
+|        | POST          | user_login                                   |                       | App\Http\Controllers\UsersController@login                             | web                       |
+|        | GET|HEAD      | viewavailableshops                           |                       | App\Http\Controllers\ApplicationController@viewavailableshops          | web                       |
+|        | GET|HEAD      | viewcart                                     |                       | App\Http\Controllers\CartController@index                              | web                       |
++--------+---------------+----------------------------------------------+-----------------------+------------------------------------------------------------------------+---------------------------+
